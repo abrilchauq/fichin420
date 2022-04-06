@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS ForeverLand;
 CREATE DATABASE ForeverLand;
 
 CREATE TABLE ForeverLand.fichin(
-    idFichin INT NOT NULL,
+    idFichin TINYINT UNSIGNED NOT NULL,
     nombre VARCHAR (45) NOT NULL,
     lanzamiento YEAR NOT NULL,
     precio DECIMAL (7,2) NOT NULL,
@@ -15,8 +15,9 @@ CREATE TABLE ForeverLand.cliente(
     nombre VARCHAR (45) NOT NULL,
     apellido VARCHAR (45) NOT NULL,
     mail VARCHAR (50) NOT NULL,
-    tarjeta INT UNSIGNED NOT NULL,
+    tarjeta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (DNI)
+    CONSTRAINT UQ_cliente_tarjeta UNIQUE (tarjeta)
 );
 
 CREATE TABLE ForeverLand.recarga(
@@ -32,7 +33,7 @@ CREATE TABLE ForeverLand.transaccion(
     fechahora DATETIME NOT NULL,
     DNI INT UNSIGNED NOT NULL,
     credito DECIMAL (7,2) NOT NULL,
-    idFichin INT NOT NULL,
+    idFichin TINYINT UNSIGNED NOT NULL,
     PRIMARY KEY (fechahora,DNI),
     CONSTRAINT FK_transaccion_fichin FOREIGN KEY (idFichin)
         REFERENCES ForeverLand.fichin (idFichin),
