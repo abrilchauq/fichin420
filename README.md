@@ -1,27 +1,21 @@
-<!-- Completa abajo cambiando ET12DE1Computacion a tu user|organización y template a tu repo, te recomiendo usar el Find & Replace de tu editor -->
+
 ![main build.NET5](https://github.com/abrilchauq/fichin420/workflows/main-build.NET5/badge.svg?branch=main) ![main test.NET5](https://github.com/abrilchauq/fichin420/workflows/main-test.NET5/badge.svg?branch=main)
-![dev build.NET5](https://github.com/abrilchauq/fichin420/workflows/dev-build.NET5/badge.svg?branch=dev) ![dev test.NET5](https://github.com/abrilchauq/fichin420/workflows/dev-test.NET5/badge.svg?branch=dev)
 [![Abrir en Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/abrilchauq/fichin420)
-<!-- Borra este comentario y linea después haber cambiado arriba las ocurrencias de tu usuario/repo -->
 
 <h1 align="center">E.T. Nº12 D.E. 1º "Libertador Gral. José de San Martín"</h1>
 <p align="center">
   <img src="https://et12.edu.ar/imgs/et12.png">
 </p>
 
-## Computación 2021
+## Computación 2022
 
-**Asignatura**: <!-- REEMPLAZA este comentario por el nombre de la asignatura -->
+**Asignatura**: Base de datos 
 
-**Nombre TP**: <!-- REEMPLAZA este comentario por el nombre del TP -->
+**Nombre TP**: Fichines 
 
-**Apellido y nombre Alumno**: <!-- REEMPLAZA este comentario por tu apellido y nombre -->
+**Apellido y nombre Alumno**: Perez Fabian, Chauque Abril 
 
-**Curso**: <!-- REEMPLAZA este comentario por tu curso -->
-
-# Título del Proyecto
-
-_Acá va un párrafo que describa lo que es el proyecto._
+**Curso**: 5to 7ma 
 
 ## Comenzando 🚀
 
@@ -34,11 +28,11 @@ git clone https://github.com/abrilchauq/fichin420
 ### Pre-requisitos 📋
 
 - .NET 5.0.7 (SDK .NET 5.0.301) [Descargar](https://dotnet.microsoft.com/download/dotnet/5.0)
-- mySQL 8
+- mySQL 8 :dolphin:
 
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre que cosas se debe instalar, configurar y como hacer deploy_
+1. Ejecutar el script _00-ddl.sql_
 
 ## Construido con 🛠️
 
@@ -51,7 +45,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 ## Autores ✒️
 
 * **Abril Chauque** - *Desarrollo* - [abrilchauq](https://github.com/abrilchauq)
-* **Cosme Fulanito** - *Documentación* - [Cosmefulanito](#Cosmefulanito)
+* **Fabian ** - *Documentación* - [Cosmefulanito](#Cosmefulanito)
 
 ## Licencia 📄
 
