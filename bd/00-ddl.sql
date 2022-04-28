@@ -16,6 +16,7 @@ CREATE TABLE ForeverLand.cliente(
     apellido VARCHAR (45) NOT NULL,
     mail VARCHAR (50) NOT NULL,
     tarjeta SMALLINT UNSIGNED NOT NULL,
+    contrasena CHAR (64) NOT NULL,
     PRIMARY KEY (DNI),
     CONSTRAINT UQ_cliente_tarjeta UNIQUE (tarjeta)
 );
