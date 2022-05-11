@@ -20,7 +20,7 @@
 ## Comenzando 🚀
 
 Clonar el repositorio github, desde Github Desktop o ejecutar en la terminal o CMD:
-<!-- cambia el link de abajo al de tu repositorio y BORRA ESTE COMENTARIO -->
+
 ```
 git clone https://github.com/abrilchauq/fichin420
 ```
@@ -45,7 +45,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 ## Autores ✒️
 
 * **Abril Chauque** - *Desarrollo* - [abrilchauq](https://github.com/abrilchauq)
-* **Fabian ** - *Documentación* - [Cosmefulanito](#Cosmefulanito)
+* **Fabian Perez**- *Documentación* - [fabianpeerez](https://github.com/fabianpeerez)
 
 ## Licencia 📄
 
