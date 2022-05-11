@@ -1,3 +1,5 @@
+USE ForeverLand;
+
 DELIMITER $$
 DROP PROCEDURE IF EXISTS Altarecarga $$
 CREATE PROCEDURE Altarecarga (unaFechaHora DATETIME, unMonto DECIMAL (7, 2), unDNI INT UNSIGNED)
@@ -16,7 +18,7 @@ END$$
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS altaFichin $$
-CREATE PROCEDURE altaFichin(unIdFichin TINYINT UNSIGNED, unNombre VARCHAR (45), unLanzamiento YEAR, unPrecio DECIMAL(7, 2)
+CREATE PROCEDURE altaFichin(unIdFichin TINYINT UNSIGNED, unNombre VARCHAR (45), unLanzamiento YEAR, unPrecio DECIMAL(7, 2))
 BEGIN
     INSERT INTO fichin(IdFichin, nombre, lanzamiento, precio)
                 VALUES(unIdFichin, unNombre, unLanzamiento, unPrecio);
@@ -43,7 +45,7 @@ END $$
 
 DELIMITER $$
 DROP FUNCTION IF EXISTS RecaudacionPara $$
-CREATE FUNCTION RecaudacionPara (unIdFichin TINYINT UNSIGNED)
+CREATE FUNCTION RecaudacionPara(unIdFichin TINYINT UNSIGNED, unInicio DATETIME, unFin DATETIME)
                                 RETURNS DECIMAL (7,2)
                                 READS SQL DATA 
 BEGIN 
@@ -51,11 +53,10 @@ BEGIN
 
     SELECT SUM(credito) INTO ganancia
     FROM transaccion
-    JOIN fichin USING(idFichin)
     WHERE idFichin = unIdFichin 
-    BETWEEN  fechahora AND lanzamiento;
+    AND fechaHora BETWEEN inicio AND fin;
 
-RETURN ganancia;
+    RETURN ganancia;
 END $$
 
 DELIMITER $$
