@@ -17,6 +17,7 @@ CREATE TABLE ForeverLand.cliente(
     mail VARCHAR (50) NOT NULL,
     tarjeta SMALLINT UNSIGNED NOT NULL,
     contrasena CHAR (64) NOT NULL,
+    saldo DECIMAL (7, 2),
     PRIMARY KEY (DNI),
     CONSTRAINT UQ_cliente_tarjeta UNIQUE (tarjeta)
 );
@@ -33,7 +34,7 @@ CREATE TABLE ForeverLand.recarga(
 CREATE TABLE ForeverLand.transaccion(
     fechahora DATETIME NOT NULL,
     DNI INT UNSIGNED NOT NULL,
-    credito DECIMAL (7,2) NOT NULL,
+    credito DECIMAL (5,2) NOT NULL,
     idFichin TINYINT UNSIGNED NOT NULL,
     PRIMARY KEY (fechahora,DNI),
     CONSTRAINT FK_transaccion_fichin FOREIGN KEY (idFichin)
