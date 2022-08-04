@@ -1,4 +1,5 @@
 delimiter ;
+SELECT 'Dump' AS Estado;
 USE ForeverLand;
 
 CALL registrarCliente(24567892, 'Fabian', 'Perez', 'fabianpeerez@gmail.com', 520, 'ABC12');
@@ -13,3 +14,7 @@ CALL altaRecarga('2022/05/12 12:45:37', 400, 36924187);
 
 CALL altaTransaccion('2021/05/11 14:30:10', 24567892, 500, 14);
 CALL altaTransaccion('2022/05/12 13:10:40', 36924187, 400, 3);
+
+-- ejemplos que no funcionan para probar triggers
+SELECT 'Ejemplo para abortar por triggers' AS Estado;
+CALL altaTransaccion('2021/05/11 14:30:10', 24567892, 1000, 14);

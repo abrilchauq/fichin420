@@ -1,5 +1,7 @@
 DROP DATABASE IF EXISTS ForeverLand;
 
+SELECT 'Creando Tablas' AS Estado;
+
 CREATE DATABASE ForeverLand;
 
 CREATE TABLE ForeverLand.fichin(

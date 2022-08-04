@@ -1,3 +1,4 @@
+SELECT 'Creando SP y SF' AS Estado;
 USE ForeverLand;
 
 DELIMITER $$
@@ -10,7 +11,7 @@ END$$
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS altaTransaccion $$
-CREATE PROCEDURE altaTransaccion(unaFechaHora DATETIME, unDNI INT UNSIGNED, unCredito DECIMAL(7, 2), unIdFichin TINYINT UNSIGNED)
+CREATE PROCEDURE altaTransaccion(unaFechaHora DATETIME, unDNI INT UNSIGNED, unCredito DECIMAL(5, 2), unIdFichin TINYINT UNSIGNED)
 BEGIN
     INSERT INTO transaccion(FechaHora, dni, credito, IdFichin)
                 VALUES(unaFechaHora, unDNI, unCredito, unIdFichin);
@@ -27,10 +28,10 @@ END $$
 DELIMITER $$
 DROP PROCEDURE IF EXISTS registrarCliente $$
 CREATE PROCEDURE registrarCliente(unDNI INT UNSIGNED, unNombre VARCHAR (45), unApellido VARCHAR (45), unMail VARCHAR(50),
-                                  unaTarjeta SMALLINT UNSIGNED, unaContrasena CHAR(64))
+unaTarjeta SMALLINT UNSIGNED, unaContrasena CHAR(64))
 BEGIN
-    INSERT INTO cliente(dni, nombre, apellido, mail, tarjeta, contrasena)
-            values(unDNI, unNombre, unApellido, unMail, unaTarjeta, SHA2(unaContrasena, 256));
+    INSERT INTO cliente(dni, nombre, apellido, mail, tarjeta, saldo, contrasena)
+            values(unDNI, unNombre, unApellido, unMail, unaTarjeta, 0, SHA2(unaContrasena, 256));
 END $$
 
 DELIMITER $$
@@ -38,9 +39,9 @@ DROP PROCEDURE IF EXISTS clientePorDniPass $$
 CREATE PROCEDURE clientePorDniPass(unDNI INT UNSIGNED, unaContrasena CHAR(64))
 BEGIN
     SELECT *
-     FROM Cliente
-     WHERE dni = unDNI 
-     AND contrasena = SHA2(unaContrasena, 256);
+    FROM Cliente
+    WHERE dni = unDNI 
+    AND contrasena = SHA2(unaContrasena, 256);
 END $$
 
 DELIMITER $$

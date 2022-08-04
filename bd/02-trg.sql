@@ -1,4 +1,6 @@
-DELIMITER $$ 
+SELECT 'Creando Triggers' AS Estado;
+USE ForeverLand;
+DELIMITER $$
 DROP TRIGGER IF EXISTS aftUpdRecarga $$
 CREATE TRIGGER aftUpdRecarga AFTER INSERT ON Recarga 
 FOR EACH ROW
@@ -9,9 +11,15 @@ BEGIN
 END $$
 
 DELIMITER $$
-DROP TRIGGER IF EXITS befInsCliente $$
-CREATE TRIGGER befInsCliente BEFORE INSERT ON Cliente
+DROP TRIGGER IF EXISTS befInsTransaccion $$
+CREATE TRIGGER befInsTransaccion BEFORE INSERT ON Transaccion
 FOR EACH ROW 
 BEGIN
-    
+    IF(EXISTS(SELECT *
+            FROM Cliente
+            WHERE dni = new.dni
+            AND saldo < new.credito)) THEN 
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Saldo insuficiente';
+    END IF;
 END $$
