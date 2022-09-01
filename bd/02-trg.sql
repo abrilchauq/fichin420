@@ -2,7 +2,7 @@ SELECT 'Creando Triggers' AS Estado;
 USE ForeverLand;
 DELIMITER $$
 DROP TRIGGER IF EXISTS aftUpdRecarga $$
-CREATE TRIGGER aftUpdRecarga AFTER INSERT ON Recarga 
+CREATE TRIGGER aftUpdRecarga AFTER UPDATE ON Recarga 
 FOR EACH ROW
 BEGIN 
     UPDATE cliente 
